@@ -1,0 +1,83 @@
+@use "../setting" as set;
+
+.c-catch {
+  width: 375px;
+  max-width: 100%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: set.$box-shadow;
+  align-items: center;
+  display: flex;
+  align-items: center;
+
+  &:nth-child(2) {
+    margin-top: 20px;
+  }
+
+  &__phrase {
+    position: relative;
+    @include set.font(32, 32, 0, 300);
+    z-index: 2;
+    width: fit-content;
+    font-family: set.$font-en;
+
+    span {
+      position: relative;
+      z-index: -1;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: set.$text-accent;
+        z-index: 1;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: set.$text-accent;
+        z-index: 1;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      @include set.mq("sp") {
+        &::before,
+        &::after {
+          background: set.$color-accent;
+        }
+      }
+    }
+  }
+  &__phrase-accent {
+    @include set.font(38, 38, 0, 700);
+    padding-left: 29px;
+    color: set.$text-accent;
+
+    @include set.mq("sp") {
+      background: set.$color-accent;
+    }
+  }
+
+  &__lead {
+    @include set.font(24, 24, 0, 300);
+  }
+
+  &__img {
+    width: 350px;
+    max-width: 100%;
+    margin-left: auto;
+
+    @include set.mq("sp") {
+      width: 71%;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "../setting" as set;
+
+.l-catch {
+  position: relative;
+  padding-top: 40px;
+  padding: 0 calc(set.$pd-x-pc / 2) ;
+
+  @include set.mq("sp") {
+    padding: 0 set.$pd-x-sp;
+  }
+
+  &__phrase {
+    position: absolute;
+    top: 0;
+    transform: translateY(-42%);
+    z-index: 2;
+
+    &:hover {
+      .c-catch__phrase span::before,
+      .c-catch__phrase span::after {
+        background: set.$color-accent;
+        transition: all .4s;
+      }
+      .c-catch__phrase-accent {
+        color: set.$color-accent;
+        transition: all .4s;
+      }
+      .l-text-accent::after {
+        background: set.$color-accent;
+        transition: all .4s;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+  }
+
+  &__text {
+    width: 50%;
+  }
+}
+

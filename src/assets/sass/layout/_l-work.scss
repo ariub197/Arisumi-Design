@@ -1,0 +1,13 @@
+
+
+.l-work {
+
+  &__card--list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    flex: 0 1 calc(50% - );
+  }
+}

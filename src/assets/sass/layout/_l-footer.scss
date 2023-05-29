@@ -1,0 +1,5 @@
+@use "../setting" as set;
+
+#footer {
+  background: set.$footer-background;
+}

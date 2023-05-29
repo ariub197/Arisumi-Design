@@ -1,0 +1,45 @@
+@use "../setting" as set;
+
+.c-work-card {
+  position: relative;
+  &__img {
+    filter: set.$img-filter;
+    overflow: hidden;
+
+    &:hover {
+      transition: all .4s;
+      filter: none;
+      transform: scale(1.1, 1.1);
+    }
+  }
+  &__tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    @include set.font(12, 12, 0, 400);
+    padding: 5px 26px;
+    border: 1px solid set.$color-main;
+    border-radius: 50px;
+    background: #fff;
+  }
+
+  &__body {
+    padding: 20px;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 12px;
+    width: 40%;
+    text-align: end;
+    &::before {
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
